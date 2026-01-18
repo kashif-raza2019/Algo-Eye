@@ -6,6 +6,7 @@ import AlgorithmCanvas from './section/AlgorithmCanvas';
 import CodeVisualizer from './components/CodeVisualizer';
 import AlgorithmDescription from './components/AlgorithmDescription';
 import ComparisonPage from './pages/ComparisonPage';
+import Footer from './section/Footer';
 
 /**
  * Sorting Algorithms Import
@@ -150,7 +151,7 @@ function App() {
   }, []);
 
   const generateNewDataSet = () => {
-    const newData = Array.from({ length: 12 }, () => Math.floor(Math.random() * 100) + 1);
+    const newData = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
     setDataSet(newData);
     setAnimationState(null);
   };
@@ -472,6 +473,7 @@ function App() {
       </div>
         </>
       )}
+      <Footer />
     </div>
   );
 }

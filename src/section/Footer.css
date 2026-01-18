@@ -1,0 +1,14 @@
+/* 
+    Footer Styles
+*/
+
+.footer {
+    background-color: #fff;
+    color:  #222;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
