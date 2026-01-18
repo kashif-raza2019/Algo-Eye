@@ -125,7 +125,7 @@ const AlgorithmDescription = ({ algorithmType }) => {
     },
     'Tim Sort': {
       description:
-        'Tim sort is a hybrid algorithm combining merge sort and insertion sort. It was designed to perform well on real-world data. Used in Python and Java. Note: This is used in python as a sorting algorithm for arrays',
+        'Tim sort is a hybrid algorithm combining merge sort and insertion sort. It was designed to perform well on real-world data. Used in Python and Java.',
       timeComplexity: {
         best: 'O(n)',
         average: 'O(n log n)',
