@@ -1,0 +1,317 @@
+/**
+ * AlgorithmDescription Component Styles
+ * Displays algorithm complexity and information in a clean, organized layout
+ */
+
+.algorithm-description {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-left: 4px solid #007bff;
+}
+
+.description-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.description-header h3 {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.description-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Main Description Section */
+.description-section {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 3px solid #0d6efd;
+}
+
+.description-text {
+  margin: 0;
+  color: #495057;
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* Complexity Grid */
+.complexity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.complexity-box {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-top: 3px solid #0d6efd;
+}
+
+.complexity-box h4 {
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.complexity-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.complexity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.complexity-row:last-child {
+  border-bottom: none;
+}
+
+.complexity-label {
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.complexity-value {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f8f9fa;
+}
+
+.complexity-value.best {
+  color: #198754;
+  background: #d1e7dd;
+}
+
+.complexity-value.average {
+  color: #ffc107;
+  background: #fff3cd;
+}
+
+.complexity-value.worst {
+  color: #dc3545;
+  background: #f8d7da;
+}
+
+.complexity-value.space {
+  color: #0d6efd;
+  background: #cfe2ff;
+}
+
+/* Stability Section */
+.stability-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stability-badge span {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stability-badge span.stable {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.stability-badge span.unstable {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.stability-note {
+  font-size: 12px;
+  font-weight: normal;
+  color: #6c757d;
+  background: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border-left: 2px solid #0d6efd;
+}
+
+/* Additional Information */
+.additional-info {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid #6c757d;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.info-value {
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.5;
+  padding-left: 8px;
+  border-left: 2px solid #e9ecef;
+}
+
+/* Algorithm Type Badge */
+.algorithm-type-badge {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.type-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type-badge.sort {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  color: white;
+}
+
+.type-badge.search {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a68a 100%);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .algorithm-description {
+    padding: 16px;
+  }
+
+  .description-header h3 {
+    font-size: 20px;
+  }
+
+  .complexity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .complexity-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .description-text {
+    text-align: left;
+  }
+}
+
+/* Dark Mode Support (optional) */
+@media (prefers-color-scheme: dark) {
+  .algorithm-description {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-left-color: #0d6efd;
+  }
+
+  .description-header {
+    border-bottom-color: #444;
+  }
+
+  .description-header h3 {
+    color: #e0e0e0;
+  }
+
+  .description-section {
+    background: #333;
+    border-left-color: #0d6efd;
+  }
+
+  .description-text {
+    color: #b0b0b0;
+  }
+
+  .complexity-box {
+    background: #333;
+    border-top-color: #0d6efd;
+  }
+
+  .complexity-box h4 {
+    color: #e0e0e0;
+  }
+
+  .complexity-label {
+    color: #999;
+  }
+
+  .complexity-value {
+    background: #444;
+    color: #e0e0e0;
+  }
+
+  .info-label {
+    color: #e0e0e0;
+  }
+
+  .info-value {
+    color: #b0b0b0;
+    border-left-color: #444;
+  }
+
+  .stability-note {
+    background: #444;
+    color: #999;
+    border-left-color: #0d6efd;
+  }
+
+  .additional-info {
+    background: #333;
+    border-left-color: #999;
+  }
+
+  .info-row {
+    border-bottom-color: #444;
+  }
+}

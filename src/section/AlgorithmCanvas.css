@@ -1,0 +1,265 @@
+.algorithm-canvas-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    margin: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.canvas-header {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.canvas-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.5px;
+}
+
+.stats {
+    display: flex;
+    gap: 24px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    min-width: 40px;
+    text-align: right;
+}
+
+.canvas {
+    width: 100%;
+    max-width: 1000px;
+    border: 3px solid #e5e7eb;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 20px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.canvas:hover {
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.canvas-legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 2px solid #e5e7eb;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+    background: #e5e7eb;
+    transform: scale(1.05);
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 2px solid #d1d5db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .algorithm-canvas-container {
+        padding: 16px;
+        margin: 16px;
+    }
+
+    .canvas-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .header-info {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .stats {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .canvas-header h2 {
+        font-size: 24px;
+    }
+
+    .stat-item {
+        padding: 10px 16px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    .stat-value {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .algorithm-canvas-container {
+        padding: 12px;
+        margin: 12px;
+        border-radius: 8px;
+    }
+
+    .canvas-header h2 {
+        font-size: 20px;
+    }
+
+    .stat-item {
+        padding: 8px 12px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+        font-size: 16px;
+    }
+
+    .canvas-legend {
+        gap: 12px;
+    }
+
+    .legend-item {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .legend-color {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .algorithm-canvas-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .canvas-header h2 {
+        font-size: 18px;
+    }
+
+    .stats {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .stat-item {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .canvas-legend {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .legend-item {
+        font-size: 11px;
+        width: 100%;
+    }
+
+    .legend-color {
+        width: 18px;
+        height: 18px;
+    }
+}
