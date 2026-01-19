@@ -15,6 +15,9 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/projects/algorithm-visualizer" element={<AlgorithmVisualizer />} />
         <Route path="/projects/json-tools" element={<JSON />} />
+
+        {/* catch all other routes and redirect to home */}
+        <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
