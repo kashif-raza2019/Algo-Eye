@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import AlgorithmVisualizer from './projects/algorithm-visualizer/AlgorithmVisualizer';
+import JSON from './projects/json-tools/JSON';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router';
 
@@ -11,6 +13,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/projects/algorithm-visualizer" element={<AlgorithmVisualizer />} />
+        <Route path="/projects/json-tools" element={<JSON />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

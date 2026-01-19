@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            <p>© {(new Date().getFullYear())-1} - {new Date().getFullYear()} Website and projects are under ownership of Kashif Raza.</p>
+            <p>© 2026 Algo-Eye. All rights reserved By Kashif Raza.</p>
         </div>
     );
 };

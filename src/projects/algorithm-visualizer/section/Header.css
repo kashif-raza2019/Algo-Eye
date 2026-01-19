@@ -13,6 +13,27 @@
 
 .header-left {
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-to-portfolio {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.back-to-portfolio:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    transform: translateX(-2px);
 }
 
 .header-title {
