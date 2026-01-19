@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 import './Header.css';
 
 const Header = ({ onAlgorithmChange, onSpeedChange, isRunning, onComparisonClick }) => {
@@ -54,6 +55,9 @@ const Header = ({ onAlgorithmChange, onSpeedChange, isRunning, onComparisonClick
     return (
         <div className="header">
             <div className="header-left">
+                <Link to="/" className="back-to-portfolio" title="Back to Portfolio">
+                    ← Portfolio
+                </Link>
                 <div className="header-title">Algo-Eye</div>
             </div>
             

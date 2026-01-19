@@ -1,53 +1,190 @@
-# Getting Started with Create React App
+# Kashif Raza - Portfolio & Algorithm Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional portfolio website featuring an interactive algorithm visualizer micro-frontend application showcasing sorting and searching algorithms with real-time visualization and performance analysis.
 
-## Available Scripts
+## 📋 Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [Architecture](#architecture)
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Portfolio
+- **Professional Landing Page** - Showcase of skills, projects, and contact information
+- **Responsive Design** - Mobile-friendly layout
+- **Project Showcase** - Link to interactive projects
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Algorithm Visualizer (Micro-frontend)
+- **Sorting Algorithms**: Bubble Sort, Merge Sort, Insertion Sort, Selection Sort, Quick Sort, Heap Sort, Shell Sort, Counting Sort, Tim Sort
+- **Searching Algorithms**: Linear Search, Binary Search
+- **Real-time Visualization** - Step-by-step algorithm execution
+- **Performance Metrics** - Comparison and statistics
+- **Audio Feedback** - Sound effects for algorithm steps
+- **Speed Control** - Adjustable execution speed
+- **Algorithm Comparison** - Side-by-side algorithm analysis
 
-### `npm test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+portfolio/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── sounds/
+│       ├── ping.mp3
+│       └── swap.mp3
+├── src/
+│   ├── pages/
+│   │   ├── PortfolioPage.jsx          # Main portfolio page
+│   │   └── ComparisonPage.jsx         # Algorithm comparison
+│   ├── algorithms/
+│   │   ├── sorting/
+│   │   └── searching/
+│   ├── components/
+│   │   ├── AlgorithmDescription.jsx
+│   │   ├── Bars.jsx
+│   │   ├── CodeVisualizer.jsx
+│   │   └── ComparisonStats.jsx
+│   ├── section/
+│   │   ├── AlgorithmCanvas.jsx
+│   │   ├── Header.jsx
+│   │   └── Footer.jsx
+│   ├── utils/
+│   │   └── soundGenerator.js
+│   ├── styles/
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── .env.example
+├── package.json
+└── README.md
+```
 
-### `npm run build`
+## 🛠 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend Framework**: React 19.2.3
+- **Routing**: React Router 7.12.0
+- **Build Tool**: Create React App
+- **Code Quality**: ESLint, Prettier
+- **Testing**: Jest, React Testing Library
+- **Styling**: CSS3 with Flexbox/Grid
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js >= 18.0.0
+- npm >= 9.0.0
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+```bash
+git clone https://github.com/kashifraza/portfolio.git
+cd portfolio
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Create environment file:
+```bash
+cp .env.example .env
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start development server:
+```bash
+npm start
+```
 
-## Learn More
+The application will open at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📜 Scripts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `npm start` - Start development server
+- `npm build` - Build for production
+- `npm test` - Run tests
+- `npm run test:coverage` - Generate coverage report
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
-### Code Splitting
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `build/` directory.
+
+### Environment Variables
+
+Create `.env.production.local` for production settings:
+
+```
+REACT_APP_ENV=production
+REACT_APP_DEBUG=false
+```
+
+### Deploy to Production
+
+The application can be deployed to:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+- Docker containers
+
+## 🏗 Architecture
+
+### Micro-frontend Design
+
+The Algorithm Visualizer is designed as a **micro-frontend** application:
+
+1. **Isolated Functionality** - Self-contained module within the main app
+2. **Modular Algorithms** - Each algorithm is independent
+3. **Reusable Components** - Visualization components can be reused
+4. **Separate Route** - Accessible at `/projects/algorithm-visualizer`
+5. **Independent State** - Manages its own state and lifecycle
+
+### Component Hierarchy
+
+```
+PortfolioPage
+├── Header
+├── About Section
+├── Skills Section
+├── Projects Section (links to micro-frontend)
+└── Footer
+
+Algorithm Visualizer (Micro-frontend)
+├── Header (with back navigation)
+├── AlgorithmCanvas
+├── CodeVisualizer
+├── AlgorithmDescription
+└── Footer
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see LICENSE file for details.
+
+## 👨‍💻 Author
+
+**Kashif Raza**
+- Senior Software Engineer
+- [GitHub](https://github.com/kashifraza)
+- [LinkedIn](https://linkedin.com/in/kashif-raza)
+- Email: kashif.raza@example.com
 
 ### Analyzing the Bundle Size
 
