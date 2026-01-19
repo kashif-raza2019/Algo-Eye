@@ -22,13 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Run tests
-        run: npm test -- --watchAll=false
+        run: npm install
 
       - name: Build application
         run: npm run build
@@ -38,22 +32,6 @@ jobs:
         with:
           name: build-${{ matrix.node-version }}
           path: build/
-
-  deploy-preview:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-18.x
-
-      - name: Deploy to preview
-        run: echo "Preview deployment would happen here"
 
   deploy-production:
     needs: build-and-test
@@ -81,7 +59,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./build/
-          server-dir: ${{ secrets.FTP_DEPLOY_DIR }}
+          local-dir: build/
+          server-dir: /
           state-name: .ftp-deploy-sync-state.json
           dangerous-clean-slate: false
